@@ -1,1 +1,23 @@
 // app global css in SCSS form
+.ls-0-3 {
+  letter-spacing: 0.3px;
+}
+
+p,
+a,
+li {
+  letter-spacing: 0.3px !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.underline-none {
+  text-decoration: none;
+}
+
+.title-v1 {
+  font-size: 18px;
+  font-weight: bold;
+}

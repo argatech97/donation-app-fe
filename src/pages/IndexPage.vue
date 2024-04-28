@@ -1,55 +1,47 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page class="column">
+    <div class="header q-mb-sm">
+      <HeaderComponent />
+    </div>
+    <div class="full-width q-px-md q-mb-md q-mt-sm">
+      <MainSectionComponent />
+    </div>
+    <div class="full-width q-px-md q-mb-md">
+      <CategorySectionComponent />
+    </div>
+    <div class="full-width col q-px-md q-mb-md">
+      <SecondarySection />
+    </div>
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+<style scoped>
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+</style>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+import HeaderComponent from 'src/components/HeaderComponent.vue';
+import MainSectionComponent from 'src/components/MainSectionComponent.vue';
+import CategorySectionComponent from 'src/components/CategorySectionComponent.vue';
+import SecondarySection from 'src/components/SecondarySection.vue';
 export default defineComponent({
   name: 'IndexPage',
 
   components: {
-    ExampleComponent
+    MainSectionComponent,
+    HeaderComponent,
+    CategorySectionComponent,
+    SecondarySection,
   },
 
-  setup () {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-
-    return { todos, meta };
-  }
+  setup() {
+    return {};
+  },
 });
 </script>
