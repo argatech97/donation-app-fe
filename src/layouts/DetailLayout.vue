@@ -13,7 +13,9 @@
             color="black"
             name="eva-arrow-back"
           ></q-icon>
-          <p class="no-margin">{{ route.name }}</p>
+          <p v-if="typeof route.name === 'string'" class="no-margin">
+            {{ $t(route.name) }}
+          </p>
         </div>
         <router-view />
         <div class="footer">
@@ -67,5 +69,6 @@ export default defineComponent({
   left: 0;
   z-index: 1000;
   height: 45px;
+  cursor: pointer;
 }
 </style>

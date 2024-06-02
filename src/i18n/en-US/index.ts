@@ -43,6 +43,7 @@ function commonLang(): ICommon {
     seeMore: 'See More',
     search: 'Search',
     notFound: 'Not Found',
+    commngSoonFeature: 'Comming Soon Feature',
   };
 }
 

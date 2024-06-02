@@ -1,5 +1,8 @@
 <template>
-  <div class="row no-wrap bg-white rounded-borders q-pa-sm items-center">
+  <div
+    @click="router.push('/campaign-detail')"
+    class="row no-wrap bg-white rounded-borders q-pa-sm items-center"
+  >
     <div class="card--img rounded-borders">
       <q-img
         loading="lazy"
@@ -60,11 +63,15 @@ li:not(:last-child) {
 import { defineComponent } from 'vue';
 import ImageLoading from './ImageLoading.vue';
 import ImageError from './ImageError.vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   components: { ImageError, ImageLoading },
   setup() {
-    return {};
+    const router = useRouter();
+    return {
+      router,
+    };
   },
 });
 </script>

@@ -1,5 +1,4 @@
 import { RouteRecordRaw } from 'vue-router';
-import { i18n } from 'src/boot/i18n';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -19,27 +18,27 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
-        name: i18n().global.t('basicInfo'),
+        name: 'basicInfo',
         component: () => import('pages/CampaignDetail.vue'),
       },
       {
         path: 'story',
-        name: i18n().global.t('story'),
+        name: 'story',
         component: () => import('pages/StoryPage.vue'),
       },
       {
         path: 'donor',
-        name: i18n().global.t('donor'),
+        name: 'donor',
         component: () => import('pages/DonorPage.vue'),
       },
       {
         path: 'news',
-        name: i18n().global.t('news'),
+        name: 'news',
         component: () => import('pages/NewsPage.vue'),
       },
       {
         path: 'funding-info',
-        name: i18n().global.t('fundInfo'),
+        name: 'fundInfo',
         component: () => import('pages/FundingInfoPage.vue'),
       },
     ],

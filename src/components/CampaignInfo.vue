@@ -1,7 +1,7 @@
 <template>
   <div class="q-px-md q-py-sm">
     <p class="q-mb-sm title-v1">{{ $t('basicInfo') }}</p>
-    <p class="text-grey-8">
+    <p>
       {{ $t('donationCollectedDesc') }}
       <span class="text-bold">Rp 2.000.000</span> .
       {{ $t('donationTargetDesc') }}
@@ -16,7 +16,6 @@
       :icon="'eva-book-open'"
       :title="$t('story')"
       :description="$t('storyDesc')"
-      :bg-color="'rgba(255, 233, 233, 0.8)'"
     />
     <CardItem
       @click="
@@ -27,7 +26,6 @@
       :icon="'eva-people'"
       :title="$t('donor')"
       :description="`20 ${$t('donorDesc')}`"
-      :bg-color="'rgba(233, 251, 255, 0.8)'"
     />
     <CardItem
       @click="
@@ -38,7 +36,6 @@
       :icon="'eva-person'"
       :title="$t('fundInfo')"
       :description="$t('fundInfoDesc')"
-      :bg-color="'rgba(234, 255, 233, 0.8)'"
     />
     <CardItem
       @click="
@@ -49,7 +46,6 @@
       :icon="'eva-email'"
       :title="$t('news')"
       :description="$t('newsEmpty')"
-      :bg-color="'rgba(233, 251, 255, 0.8)'"
     />
   </div>
 </template>

@@ -1,8 +1,14 @@
 <template>
-  <div class="container row items-center nowrap q-mb-md bg-white q-pa-sm">
-    <div class="icon">
+  <div
+    :style="`background-color: ${bgColor ? bgColor : 'white'}`"
+    class="container row items-center nowrap q-mb-md q-pa-sm"
+  >
+    <div v-if="icon" class="icon">
       <q-icon color="primary" :name="icon"></q-icon>
     </div>
+    <q-avatar v-else-if="avatar">
+      <img :src="avatar" />
+    </q-avatar>
     <div class="content q-ml-md column items-start justify-center">
       <p class="no-margin text-bold">{{ title }}</p>
       <p class="no-margin text-grey-8">{{ description }}</p>
@@ -26,11 +32,15 @@ export default defineComponent({
     },
     bgColor: {
       type: String,
-      required: true,
+      required: false,
     },
     icon: {
       type: String,
-      required: true,
+      required: false,
+    },
+    avatar: {
+      type: String,
+      required: false,
     },
   },
   setup() {
@@ -41,7 +51,8 @@ export default defineComponent({
 
 <style scoped>
 .container {
-  border-radius: 5px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .icon {

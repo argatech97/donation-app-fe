@@ -34,5 +34,7 @@ export default defineComponent({
   z-index: 100;
   background: var(--q-secondary);
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 </style>

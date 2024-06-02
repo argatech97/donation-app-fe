@@ -28,6 +28,7 @@ function common(): ICommon {
     seeMore: 'Lebih Banyak',
     search: 'Cari',
     notFound: 'Tidak Tersedia',
+    commngSoonFeature: 'Fitur Ini Segera Hadir',
   };
 }
 

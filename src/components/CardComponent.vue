@@ -1,5 +1,8 @@
 <template>
-  <div class="full-width rounded-borders column overflow-hidden">
+  <div
+    @click="router.push('/campaign-detail')"
+    class="full-width rounded-borders column overflow-hidden"
+  >
     <div class="card--image">
       <q-img
         src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
@@ -56,6 +59,7 @@ li:not(:last-child) {
 import { defineComponent } from 'vue';
 import ImageLoading from './ImageLoading.vue';
 import ImageError from './ImageError.vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   components: {
@@ -63,7 +67,10 @@ export default defineComponent({
     ImageLoading,
   },
   setup() {
-    return {};
+    const router = useRouter();
+    return {
+      router,
+    };
   },
 });
 </script>
